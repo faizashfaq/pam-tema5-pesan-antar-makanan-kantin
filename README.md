@@ -19,11 +19,12 @@ Fitur platform yang dipakai: **Notifikasi** (misalnya pemberitahuan pesanan dite
 - [x] Setiap anggota menambahkan nama dan NIM di layar Tentang (satu commit per anggota)
 
 ## Tangkapan Layar
-| Android         | Desktop                                                           |
-|-----------------|-------------------------------------------------------------------|
-| ![Android](![]) | ![Desktop](![docs/Desktop.png]) |
+
+| Android | Desktop |
+|---|---|
+| ![Android](docs/Android.png) | ![Desktop](docs/Desktop.png) |
 
 ## Cara Menjalankan
-- **Android**: buka proyek di Android Studio, pilih konfigurasi `androidApp`, lalu Run.
-- **Desktop**: `./gradlew :desktopApp:run` (Windows: `.\gradlew.bat :desktopApp:run`).
-Untuk menjalankan desktop dari Android Studio, pilih konfigurasi **Desktop**, lalu klik Run. Tunggu Gradle Sync selesai jika konfigurasi belum muncul.
+
+- **Android:** buka proyek di Android Studio, pilih konfigurasi `androidApp`, lalu Run.
+- **Desktop:** jalankan `./gradlew :desktopApp:run`.
