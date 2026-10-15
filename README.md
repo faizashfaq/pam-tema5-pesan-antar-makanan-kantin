@@ -9,7 +9,7 @@ Fitur platform yang dipakai: **Notifikasi** (misalnya pemberitahuan pesanan dite
 ## Anggota Kelompok
 | No | Nama | NIM |
 |----|------|-----|
-| 1 | Aryo Fajar Pratomo | 124140012 |
+| 1 | Muhammad Faiz Ashfaq | 124140144 |
 | 2 | (isi nama anggota 2) | (isi NIM) |
 | 3 | (isi nama anggota 3) | (isi NIM) |
 
