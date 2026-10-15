@@ -7,10 +7,10 @@ Proyek kelompok mata kuliah **Pengembangan Aplikasi Mobile** (Teknik Informatika
 Fitur platform yang dipakai: **Notifikasi** (misalnya pemberitahuan pesanan diterima, diproses, dan siap diantar).
 
 ## Anggota Kelompok
-| No | Nama | NIM |
-|----|------|-----|
+| No | Nama                 | NIM       |
+|----|----------------------|-----------|
 | 1 | Muhammad Faiz Ashfaq | 124140144 |
-| 2 | (isi nama anggota 2) | (isi NIM) |
+| 2 | Aryo Fajar Pratomo   | 124140012 |
 | 3 | (isi nama anggota 3) | (isi NIM) |
 
 ## Progres Minggu 1
@@ -19,10 +19,11 @@ Fitur platform yang dipakai: **Notifikasi** (misalnya pemberitahuan pesanan dite
 - [x] Setiap anggota menambahkan nama dan NIM di layar Tentang (satu commit per anggota)
 
 ## Tangkapan Layar
-| Beranda | Tentang |
-|---------|---------|
-| ![Beranda](docs/beranda.png) | ![Tentang](docs/tentang.png) |
+| Android         | Desktop                                                           |
+|-----------------|-------------------------------------------------------------------|
+| ![Android](![]) | ![Desktop](![docs/Desktop.png]) |
 
 ## Cara Menjalankan
-- **Android**: buka proyek di Android Studio, pilih konfigurasi `composeApp`, lalu Run.
-- **Desktop**: `./gradlew :composeApp:run` (Windows: `gradlew.bat :composeApp:run`).
+- **Android**: buka proyek di Android Studio, pilih konfigurasi `androidApp`, lalu Run.
+- **Desktop**: `./gradlew :desktopApp:run` (Windows: `.\gradlew.bat :desktopApp:run`).
+Untuk menjalankan desktop dari Android Studio, pilih konfigurasi **Desktop**, lalu klik Run. Tunggu Gradle Sync selesai jika konfigurasi belum muncul.
