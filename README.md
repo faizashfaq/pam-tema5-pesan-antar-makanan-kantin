@@ -11,7 +11,7 @@ Fitur platform yang dipakai: **Notifikasi** (misalnya pemberitahuan pesanan dite
 |----|----------------------|-----------|
 | 1 | Muhammad Faiz Ashfaq | 124140144 |
 | 2 | Aryo Fajar Pratomo   | 124140012 |
-| 3 | (isi nama anggota 3) | (isi NIM) |
+| 3 | Syehabudin           | 124140102 |
 
 ## Progres Minggu 1
 - [x] Proyek dibuat dari template Compose Multiplatform dan di-push ke repository kelompok
