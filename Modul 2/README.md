@@ -127,7 +127,7 @@ composeApp/src/
 
 | Anggota | Bagian yang dikerjakan | Berkas |
 |---------|------------------------|--------|
-| (isi nama anggota 1) | Model data tema | `model/*` |
+| (Aryo Fajar Pratomo) | Model data tema | `model/*` |
 | (isi nama anggota 2) | Sumber data palsu: `delay`, Flow, error | `data/*` |
 | (isi nama anggota 3) | Bukti berjalan di konsol dan README | `demo/DemoKonsol.kt`, `DemoMain.kt`, `README.md` |
 
