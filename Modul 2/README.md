@@ -125,10 +125,10 @@ composeApp/src/
 
 ## Pembagian Tugas
 
-| Anggota | Bagian yang dikerjakan | Berkas |
-|---------|------------------------|--------|
-| Aryo Fajar Pratomo | Model data tema | `model/*` |
-| (isi nama anggota 2) | Sumber data palsu: `delay`, Flow, error | `data/*` |
+| Anggota              | Bagian yang dikerjakan | Berkas |
+|----------------------|------------------------|--------|
+| Aryo Fajar Pratomo   | Model data tema | `model/*` |
+| Syehabudin           | Sumber data palsu: `delay`, Flow, error | `data/*` |
 | (isi nama anggota 3) | Bukti berjalan di konsol dan README | `demo/DemoKonsol.kt`, `DemoMain.kt`, `README.md` |
 
 <!-- Isi nama anggota dan sesuaikan pembagian tugas dengan kontribusi sebenarnya sebelum push. -->
