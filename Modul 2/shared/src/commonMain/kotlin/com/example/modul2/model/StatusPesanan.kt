@@ -1,11 +1,13 @@
 package org.example.project.model
 
-data class Pesanan(
-    val id: Int,
-    val pemesan: String,
-    val lokasiAntar: String,
-    val menu: MenuKantin,
-    val jumlah: Int,
-    val catatan: String?,
-    val status: StatusPesanan = StatusPesanan.Diterima,
-)
+sealed class StatusPesanan {
+    data object Diterima : StatusPesanan()
+
+    data class Diproses(
+        val penjual: String
+    ) : StatusPesanan()
+
+    data class SiapDiantar(
+        val kurir: String
+    ) : StatusPesanan()
+}
