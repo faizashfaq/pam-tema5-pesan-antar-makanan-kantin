@@ -98,9 +98,9 @@ composeApp/src/commonMain/kotlin/org/example/project/
 
 ## Pembagian Tugas
 
-| Anggota | Bagian yang dikerjakan | Berkas |
-|---------|------------------------|--------|
-| (isi nama anggota 1) | Kartu entitas dan label status | `KartuPesanan.kt`, `LabelStatus.kt` |
+| Anggota              | Bagian yang dikerjakan | Berkas |
+|----------------------|------------------------|--------|
+| Aryo Fajar Pratomo   | Kartu entitas dan label status | `KartuPesanan.kt`, `LabelStatus.kt` |
 | (isi nama anggota 2) | Data dummy dan olah sebelum tampil | `ContohDaftarPesanan.kt`, `OlahDaftar.kt` |
 | (isi nama anggota 3) | Layar daftar, FAB, tangkapan layar, README | `DaftarPesanan.kt`, `LayarDaftarPesanan.kt`, `App.kt`, `README.md` |
 
