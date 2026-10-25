@@ -1,10 +1,10 @@
-package org.example.project.data
+package com.example.modul2.data
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import org.example.project.model.Pesanan
-import org.example.project.model.StatusPesanan
+import com.example.modul2.model.Pesanan
+import com.example.modul2.model.StatusPesanan
 
 class SumberPesananPalsu : Sumber<Pesanan> {
     override suspend fun ambil(id: Int): Pesanan {

@@ -1,4 +1,4 @@
-package org.example.project.data
+package com.example.modul2.data
 
 import kotlinx.coroutines.flow.Flow
 

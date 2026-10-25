@@ -1,4 +1,4 @@
-package org.example.project.model
+package com.example.modul2.model
 
 fun StatusPesanan.label(): String = when (this) {
     StatusPesanan.Diterima -> "Pesanan diterima, menunggu kantin"

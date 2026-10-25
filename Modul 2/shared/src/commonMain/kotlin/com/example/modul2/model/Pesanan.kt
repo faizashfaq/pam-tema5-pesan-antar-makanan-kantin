@@ -1,4 +1,4 @@
-package org.example.project.model
+package com.example.modul2.model
 
 data class Pesanan(
     val id: Int,

@@ -1,7 +1,7 @@
-package org.example.project.data
+package com.example.modul2.data
 
-import org.example.project.model.MenuKantin
-import org.example.project.model.Pesanan
+import com.example.modul2.model.MenuKantin
+import com.example.modul2.model.Pesanan
 
 val contohMenu = MenuKantin(
     id = 1,

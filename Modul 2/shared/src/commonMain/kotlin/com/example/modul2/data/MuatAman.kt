@@ -1,8 +1,8 @@
-package org.example.project.data
+package com.example.modul2.data
 
 import kotlinx.coroutines.CancellationException
-import org.example.project.model.Pesanan
-import org.example.project.model.ringkas
+import com.example.modul2.model.Pesanan
+import com.example.modul2.model.ringkas
 
 suspend fun Sumber<Pesanan>.muatAman(id: Int): String = try {
     ambil(id).ringkas()

@@ -1,4 +1,4 @@
-package org.example.project.model
+package com.example.modul2.model
 
 sealed class StatusPesanan {
     data object Diterima : StatusPesanan()

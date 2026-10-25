@@ -14,24 +14,21 @@ Fitur platform yang dipakai: **Notifikasi** (pemberitahuan pesanan diterima, dip
 | 3 | Syehabudin           | 124140102 |
 
 ## Progres
-### Minggu 1
+### Minggu 1 (proyek ada di folder `Modul 1`)
 - [x] Proyek dibuat dari template Compose Multiplatform dan di-push ke repository kelompok
 - [x] Judul aplikasi diganti menjadi nama tema, nama platform ikut tampil
 - [x] Setiap anggota menambahkan nama dan NIM di layar Tentang (satu commit per anggota)
 
+Folder `Modul 2` melanjutkan tema yang sama dan fokus pada model data, coroutines, dan Flow.
+
 ### Minggu 2: Model Data, Coroutines, dan Flow
 - [x] **Model data tema**: dua data class (`Pesanan`, `MenuKantin`) dan satu sealed class status (`StatusPesanan`) di `commonMain/model`
 - [x] **Sumber data palsu**: `SumberPesananPalsu` mengimplementasikan `Sumber<Pesanan>` dengan `delay` dan Flow perubahan status
-- [x] **Bukti berjalan**: `jalankanDemo()` mencetak model, hasil coroutines, dan perubahan status ke konsol
-
-## Tangkapan Layar
-| Beranda | Tentang |
-|---------|---------|
-| ![Beranda](docs/beranda.png) | ![Tentang](docs/tentang.png) |
+- [x] **Bukti berjalan**: `jalankanDemo()` mencetak model, hasil coroutines, perubahan status lewat Flow, dan penanganan error ke konsol
 
 ## Model Data (Minggu 2)
 
-Semua kode ada di `commonMain`, jadi dipakai bersama oleh Android dan Desktop.
+Kode model, data, dan demo ada di `commonMain`, jadi dipakai bersama oleh Android dan Desktop. Hanya titik masuk `DemoMain.kt` yang diletakkan di `jvmMain` agar bisa dijalankan sebagai program konsol di desktop.
 
 | Tipe | Jenis | Isi |
 |------|-------|-----|
@@ -60,7 +57,8 @@ interface Sumber<T> {
 - `ambil(id)` menunggu 1000 ms (`delay`), lalu mengembalikan satu pesanan.
 - `ambilRiwayat(id)` menunggu 800 ms, dipakai untuk latihan `async`.
 - `pantau(id)` memancarkan pesanan yang sama tiga kali: **Diterima**, setelah 1500 ms **Diproses**, setelah 2000 ms lagi **SiapDiantar**.
-- `muatAman(id)` memuat pesanan dengan `try/catch`; `CancellationException` dilempar ulang supaya pembatalan coroutine tidak tertelan.
+
+`muatAman(id)` adalah extension function pada `Sumber<Pesanan>` di `data/MuatAman.kt`: ia memuat pesanan dengan `try/catch`, dan `CancellationException` dilempar ulang supaya pembatalan coroutine tidak tertelan.
 
 Minggu 6 cukup menulis `SumberPesananServer : Sumber<Pesanan>` tanpa mengubah pemanggilnya.
 
@@ -78,23 +76,27 @@ status a       : Pesanan diterima, menunggu kantin
 status diproses: Sedang disiapkan oleh Kantin Bu Siti
 
 === 2. Coroutines: dua proses bersamaan ===
-Berurutan (tanpa async)  : 1830 ms
+Berurutan (tanpa async)  : 1823 ms
 Hasil: #7 Nasi Ayam Geprek x2 untuk Rani Putri, antar ke GKU 1 ruang 201 | riwayat: [Dipesan 12.05, Diterima kantin 12.06]
 Bersamaan (dengan async) : 1019 ms
 
 === 3. Flow: status pesanan berubah ===
 Sebelum collect
-[+  15 ms] status berubah: Pesanan diterima, menunggu kantin
-[+1522 ms] status berubah: Sedang disiapkan oleh Kantin Bu Siti
-[+1523 ms] Notifikasi: pesanan #7 - Sedang disiapkan oleh Kantin Bu Siti
-[+3524 ms] status berubah: Siap diantar oleh Kurir Budi
-[+3525 ms] Notifikasi: pesanan #7 - Siap diantar oleh Kurir Budi
+[+  12 ms] status berubah: Pesanan diterima, menunggu kantin
+[+1519 ms] status berubah: Sedang disiapkan oleh Kantin Bu Siti
+[+1521 ms] Notifikasi: pesanan #7 - Sedang disiapkan oleh Kantin Bu Siti
+[+3529 ms] status berubah: Siap diantar oleh Kurir Budi
+[+3530 ms] Notifikasi: pesanan #7 - Siap diantar oleh Kurir Budi
 Sesudah collect
 
 === 4. Menangani error ===
 Id  7: #7 Nasi Ayam Geprek x2 untuk Rani Putri, antar ke GKU 1 ruang 201
 Id -1: Gagal memuat pesanan #-1: id harus positif
 ```
+
+Tangkapan layar hasil yang sama (termasuk status build Gradle):
+
+![Keluaran konsol jalankanDemo](docs/keluaran-terminal.png)
 
 Cara membaca hasilnya:
 - **Bagian 1**: `copy` membuat pesanan baru; pesanan `a` tetap berstatus Diterima (`a == diproses` bernilai `false`).
@@ -105,8 +107,8 @@ Cara membaca hasilnya:
 ## Struktur Berkas (tambahan Minggu 2)
 
 ```
-composeApp/src/
-├── commonMain/kotlin/org/example/project/
+shared/src/
+├── commonMain/kotlin/com/example/modul2/
 │   ├── model/
 │   │   ├── MenuKantin.kt        data class pendukung
 │   │   ├── Pesanan.kt           data class utama
@@ -119,8 +121,8 @@ composeApp/src/
 │   │   └── MuatAman.kt          try/catch untuk suspend function
 │   └── demo/
 │       └── DemoKonsol.kt        jalankanDemo(): bukti berjalan
-└── desktopMain/kotlin/org/example/project/
-    └── DemoMain.kt              titik masuk demo di desktop
+└── jvmMain/kotlin/com/example/modul2/
+    └── DemoMain.kt              titik masuk demo di desktop (JVM)
 ```
 
 ## Pembagian Tugas
@@ -129,28 +131,23 @@ composeApp/src/
 |----------------------|------------------------|--------|
 | Aryo Fajar Pratomo   | Model data tema | `model/*` |
 | Syehabudin           | Sumber data palsu: `delay`, Flow, error | `data/*` |
-| (isi nama anggota 3) | Bukti berjalan di konsol dan README | `demo/DemoKonsol.kt`, `DemoMain.kt`, `README.md` |
-
-<!-- Isi nama anggota dan sesuaikan pembagian tugas dengan kontribusi sebenarnya sebelum push. -->
+| Muhammad Faiz Ashfaq | Bukti berjalan di konsol dan README | `demo/DemoKonsol.kt`, `DemoMain.kt`, `README.md` |
 
 ## Cara Menjalankan
-- **Android**: buka proyek di Android Studio, pilih konfigurasi `composeApp`, lalu Run.
-- **Desktop (aplikasi)**: `./gradlew :composeApp:run` (Windows: `gradlew.bat :composeApp:run`).
-- **Demo konsol (bukti berjalan)**: buka `composeApp/src/desktopMain/kotlin/org/example/project/DemoMain.kt`, klik ikon Run hijau di sebelah `fun main`, lalu lihat keluarannya di jendela Run. Demo berjalan sekitar 7 detik.
+- **Android**: buka proyek di Android Studio, pilih konfigurasi `androidApp`, lalu Run.
+- **Desktop (aplikasi)**: `./gradlew :desktopApp:run` (Windows: `gradlew.bat :desktopApp:run`).
+- **Demo konsol (bukti berjalan)**: jalankan `./gradlew :shared:runDemo` atau buka `shared/src/jvmMain/kotlin/com/example/modul2/DemoMain.kt`, klik ikon Run hijau di sebelah `fun main`, lalu lihat keluarannya di jendela Run. Demo berjalan sekitar 7 detik.
 
 ### Dependensi coroutines
-Pastikan `commonMain` punya `kotlinx-coroutines-core`.
+Kode demo memakai `kotlinx-coroutines-core`. Di proyek ini coroutines sudah ikut tersedia lewat dependensi Compose/lifecycle, tetapi sebaiknya dideklarasikan eksplisit di `commonMain`.
 
-`gradle/libs.versions.toml` (pakai entri versi `kotlinx-coroutines` yang sudah ada kalau template sudah memilikinya):
+`gradle/libs.versions.toml` sudah punya entri versi `kotlinx-coroutines = "1.11.0"`, tetapi alias library-nya belum ada. Tambahkan:
 ```toml
-[versions]
-kotlinx-coroutines = "1.10.2"
-
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 ```
 
-`composeApp/build.gradle.kts`:
+`shared/build.gradle.kts`:
 ```kotlin
 kotlin {
     sourceSets {
@@ -162,4 +159,4 @@ kotlin {
 }
 ```
 
-Semua berkas memakai `package org.example.project` (bawaan template). Kalau proyek kelompok memakai package lain, ganti dengan Find and Replace di seluruh proyek.
+Semua berkas memakai package `com.example.modul2`: model di `com.example.modul2.model`, data di `com.example.modul2.data`, dan demo di `com.example.modul2.demo`. `mainClass` task `runDemo` di `shared/build.gradle.kts` juga sudah mengarah ke `com.example.modul2.DemoMain`.

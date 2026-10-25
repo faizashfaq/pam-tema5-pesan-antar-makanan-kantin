@@ -55,3 +55,12 @@ kotlin {
 dependencies {
     androidRuntimeClasspath(libs.compose.uiTooling)
 }
+
+tasks.register<JavaExec>("runDemo") {
+    group = "application"
+    description = "Runs the DemoMain console application"
+    mainClass.set("com.example.modul2.DemoMain")
+    val jvmTarget = kotlin.targets.getByName("jvm")
+    val compilation = jvmTarget.compilations.getByName("main")
+    classpath = files(compilation.runtimeDependencyFiles, compilation.output.allOutputs)
+}
