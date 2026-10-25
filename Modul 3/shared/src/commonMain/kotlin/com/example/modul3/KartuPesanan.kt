@@ -19,10 +19,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import org.example.project.model.Pesanan
-import org.example.project.model.catatanAtauDefault
-import org.example.project.model.rupiah
-import org.example.project.model.total
+import com.example.modul3.model.Pesanan
+import com.example.modul3.model.catatanAtauDefault
+import com.example.modul3.model.rupiah
+import com.example.modul3.model.total
 
 @Composable
 fun KartuPesanan(

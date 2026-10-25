@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import org.example.project.model.StatusPesanan
+import com.example.modul3.model.StatusPesanan
 
 fun StatusPesanan.labelPendek(): String = when (this) {
     StatusPesanan.Diterima -> "Baru"
