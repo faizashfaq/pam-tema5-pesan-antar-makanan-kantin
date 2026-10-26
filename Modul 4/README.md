@@ -10,7 +10,7 @@ Fitur platform yang dipakai: **Notifikasi** (pemberitahuan pesanan diterima, dip
 | No | Nama | NIM |
 |----|------|-----|
 | 1 | Muhammad Faiz Ashfaq | 124140144 |
-| 2 |  Aryo Fajar Pratomo  | 124140012 |
+| 2 | Aryo Fajar Pratomo   | 124140012 |
 | 3 | (isi nama anggota 3) | (isi NIM) |
 
 ## Progres
