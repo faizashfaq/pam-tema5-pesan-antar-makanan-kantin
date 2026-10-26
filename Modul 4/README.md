@@ -7,11 +7,11 @@ Proyek kelompok mata kuliah **Pengembangan Aplikasi Mobile (IF25-22017)**, Tekni
 Fitur platform yang dipakai: **Notifikasi** (pemberitahuan pesanan diterima, diproses, dan siap diantar).
 
 ## Anggota Kelompok
-| No | Nama | NIM |
-|----|------|-----|
+| No | Nama       | NIM       |
+|----|------------|-----------|
 | 1 | Muhammad Faiz Ashfaq | 124140144 |
-| 2 | Aryo Fajar Pratomo   | 124140012 |
-| 3 | (isi nama anggota 3) | (isi NIM) |
+| 2 | Aryo Fajar Pratomo | 124140012 |
+| 3 | Syehabudin | 124140102 |
 
 ## Progres
 ### Minggu 1
