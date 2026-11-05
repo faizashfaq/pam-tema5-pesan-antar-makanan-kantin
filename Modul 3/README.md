@@ -11,7 +11,7 @@ Fitur platform yang dipakai: **Notifikasi** (pemberitahuan pesanan diterima, dip
 |----|------|-----|
 | 1 | Muhammad Faiz Ashfaq | 124140144 |
 | 2 | Aryo Fajar Pratomo   | 124140012 |
-| 3 | (isi nama anggota 3) | (isi NIM) |
+| 3 | Syehabudin | 124140102 |
 
 ## Progres
 ### Minggu 1
@@ -101,8 +101,8 @@ composeApp/src/commonMain/kotlin/org/example/project/
 | Anggota              | Bagian yang dikerjakan | Berkas |
 |----------------------|------------------------|--------|
 | Aryo Fajar Pratomo   | Kartu entitas dan label status | `KartuPesanan.kt`, `LabelStatus.kt` |
-| (isi nama anggota 2) | Data dummy dan olah sebelum tampil | `ContohDaftarPesanan.kt`, `OlahDaftar.kt` |
-| (isi nama anggota 3) | Layar daftar, FAB, tangkapan layar, README | `DaftarPesanan.kt`, `LayarDaftarPesanan.kt`, `App.kt`, `README.md` |
+| Muhammad Faiz Ashfaq | Data dummy dan olah sebelum tampil | `ContohDaftarPesanan.kt`, `OlahDaftar.kt` |
+| Syehabudin | Layar daftar, FAB, tangkapan layar, README | `DaftarPesanan.kt`, `LayarDaftarPesanan.kt`, `App.kt`, `README.md` |
 
 <!-- Isi nama anggota dan sesuaikan pembagian tugas dengan kontribusi sebenarnya sebelum push. -->
 
